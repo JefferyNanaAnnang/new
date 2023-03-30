@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        nav{
+            box-shadow: 0 5px 5px #333;
+            display: flex;
+            justify-content: space-between;
+            background-color: aqua;
+        }
+        nav #logo{
+            width: 50px;
+            height: 50px;
+            background-color: antiquewhite;
+    
+        }
+    .dropdown{
+        display: none;
+    }
+        
+        nav ul{
+          margin: 10px;
+            display: flex;
+            justify-content: space-between;
+            list-style: none; 
+            gap: 2rem;
+            align-items: center;
+           
+            
+        }
+        
+        nav ul li:hover{
+        
+        cursor: pointer;
+            color: blue;
+    
+        }
+        nav ul li:active{
+            
+        cursor: pointer;
+        color: white;
+    
+        }
+        /* media smaller screen */
+@media screen and (max-width:600px) {
+    
+    nav{
+        width: 100%;
+            box-shadow: 0 5px 5px #333;
+            display: flex;
+            justify-content: space-between;
+            background-color: aqua;
+        align-items: center;
+        } 
+        nav ul li:not(.dropdown){
+          
+           display: none;
+            
+        }
+        .dropdown{
+           
+            display: block;
+        }
+}
+.drop-container{
+    float: right;
+    padding: 0.5em;
+    display: none;
+}
+.drop-container ul{
+   box-shadow: 0 6px 9px 0;
+    list-style: none;
+    background-color:gainsboro;
+}
+.drop-container ul li{
+   padding: 1em;
+}
+.drop-container ul li:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+    </style>
+    <script>
+        function show_dropDownmenu(){
+            document.getElementById("dropdownmenu").style.display="block"
+        }
+        function hide_dropDownmenu(){
+            document.getElementById("dropdownmenu").style.display="none"
+        }
+    </script>
+
+</head>
+<body >
+    <nav>
+        <div id="logo">
+            <img src="pic/IMG_20210926_173030_152.jpg" width="100%" height="100%">
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact</li>
+            <li>Promo</li>
+            <li class="dropdown" onclick="show_dropDownmenu()" > DropdMenu</li>
+        </ul>
+    
+    </nav>
+    <section class="drop-container" id="dropdownmenu" onclick="hide_dropDownmenu()">
+         <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact</li>
+            <li>Promo</li>
+        
+        
+        </ul>
+    </section>
+</body>
+</html>
